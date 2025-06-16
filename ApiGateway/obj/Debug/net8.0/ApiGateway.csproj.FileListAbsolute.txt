@@ -45,3 +45,4 @@
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/bin/Debug/net8.0/Ocelot.Provider.Polly.dll
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/bin/Debug/net8.0/Polly.dll
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/bin/Debug/net8.0/Polly.Core.dll
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/obj/Debug/net8.0/ApiGateway.sourcelink.json

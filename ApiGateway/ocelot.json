@@ -25,6 +25,19 @@
         "UpstreamPathTemplate": "/gateway/users",
         "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
         "Priority": 1
+      },
+      {
+        "DownstreamPathTemplate": "/api/auth/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5190
+          }
+        ],
+        "UpstreamPathTemplate": "/gateway/api/auth/{everything}",
+        "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+        "Priority": 1
       }
     ],
     "GlobalConfiguration": {
