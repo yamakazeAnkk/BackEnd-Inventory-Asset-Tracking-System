@@ -1,0 +1,11 @@
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/bin/Debug/net8.0/SharedKernel.deps.json
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/bin/Debug/net8.0/SharedKernel.dll
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/bin/Debug/net8.0/SharedKernel.pdb
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/SharedKernel.AssemblyInfoInputs.cache
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/SharedKernel.AssemblyInfo.cs
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/SharedKernel.csproj.CoreCompileInputs.cache
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/SharedKernel.dll
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/refint/SharedKernel.dll
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/SharedKernel.pdb
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/Debug/net8.0/ref/SharedKernel.dll

@@ -1,0 +1,43 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/api/assets",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5262
+          }
+        ],
+        "UpstreamPathTemplate": "/gateway/assets",
+        "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+        "Priority": 1
+      },
+      {
+        "DownstreamPathTemplate": "/api/users",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5131
+          }
+        ],
+        "UpstreamPathTemplate": "/gateway/users",
+        "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+        "Priority": 1
+      }
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:5040",
+      "RequestIdKey": "OcRequestId",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 1000,
+        "TimeoutValue": 5000
+      }
+    }
+  }
