@@ -33,3 +33,4 @@
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/UserService/obj/Debug/net8.0/UserService.pdb
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/UserService/obj/Debug/net8.0/UserService.genruntimeconfig.cache
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/UserService/obj/Debug/net8.0/ref/UserService.dll
+/Users/nguyenan/Documents/Inventory & Asset Tracking System/UserService/obj/Debug/net8.0/UserService.sourcelink.json
