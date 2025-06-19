@@ -33,3 +33,39 @@
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/Debug/net8.0/ReportingService.pdb
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/Debug/net8.0/ReportingService.genruntimeconfig.cache
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/Debug/net8.0/ref/ReportingService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\appsettings.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\ReportingService.exe
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\ReportingService.deps.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\ReportingService.runtimeconfig.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\ReportingService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\ReportingService.pdb
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\SharedKernel.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\bin\Debug\net8.0\SharedKernel.pdb
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.csproj.AssemblyReference.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.AssemblyInfoInputs.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.AssemblyInfo.cs
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.csproj.CoreCompileInputs.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.sourcelink.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets\msbuild.ReportingService.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets\msbuild.build.ReportingService.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ReportingService.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ReportingService.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\scopedcss\bundle\ReportingService.styles.css
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\Reportin.FB5AD4DB.Up2Date
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\refint\ReportingService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.pdb
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ReportingService.genruntimeconfig.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\ReportingService\obj\Debug\net8.0\ref\ReportingService.dll
