@@ -1,33 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/AssetService/AssetService.csproj": {}
+    "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj": {}
   },
   "projects": {
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/AssetService/AssetService.csproj": {
+    "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/AssetService/AssetService.csproj",
+        "projectUniqueName": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj",
         "projectName": "AssetService",
-        "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/AssetService/AssetService.csproj",
-        "packagesPath": "/Users/nguyenan/.nuget/packages/",
-        "outputPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/AssetService/obj/",
+        "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj",
+        "packagesPath": "C:\\Users\\Kim Huy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nguyenan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Kim Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj": {
-                "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj"
+              "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj"
               }
             }
           }
@@ -75,26 +78,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.409/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj": {
+    "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj",
+        "projectUniqueName": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj",
         "projectName": "SharedKernel",
-        "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj",
-        "packagesPath": "/Users/nguyenan/.nuget/packages/",
-        "outputPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/",
+        "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\Kim Huy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nguyenan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Kim Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -117,6 +123,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.17, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -133,7 +153,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.409/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -33,3 +33,39 @@
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/InventoryService/obj/Debug/net8.0/InventoryService.pdb
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/InventoryService/obj/Debug/net8.0/InventoryService.genruntimeconfig.cache
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/InventoryService/obj/Debug/net8.0/ref/InventoryService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\appsettings.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\InventoryService.exe
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\InventoryService.deps.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\InventoryService.runtimeconfig.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\InventoryService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\InventoryService.pdb
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\SharedKernel.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\bin\Debug\net8.0\SharedKernel.pdb
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.csproj.AssemblyReference.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.AssemblyInfoInputs.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.AssemblyInfo.cs
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.csproj.CoreCompileInputs.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.sourcelink.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets\msbuild.InventoryService.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets\msbuild.build.InventoryService.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.InventoryService.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.InventoryService.props
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\scopedcss\bundle\InventoryService.styles.css
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\Inventor.248F7646.Up2Date
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\refint\InventoryService.dll
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.pdb
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\InventoryService.genruntimeconfig.cache
+C:\Users\Kim Huy\Desktop\PersonalProject\InventoryAndAssetTrackingSystem\InventoryService\obj\Debug\net8.0\ref\InventoryService.dll
