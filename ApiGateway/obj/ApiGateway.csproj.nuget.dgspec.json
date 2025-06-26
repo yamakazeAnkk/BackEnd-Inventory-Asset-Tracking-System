@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/ApiGateway.csproj": {}
+    "/Users/nguyenan/Documents/System/ApiGateway/ApiGateway.csproj": {}
   },
   "projects": {
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/ApiGateway.csproj": {
+    "/Users/nguyenan/Documents/System/ApiGateway/ApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/ApiGateway.csproj",
+        "projectUniqueName": "/Users/nguyenan/Documents/System/ApiGateway/ApiGateway.csproj",
         "projectName": "ApiGateway",
-        "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/ApiGateway.csproj",
+        "projectPath": "/Users/nguyenan/Documents/System/ApiGateway/ApiGateway.csproj",
         "packagesPath": "/Users/nguyenan/.nuget/packages/",
-        "outputPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ApiGateway/obj/",
+        "outputPath": "/Users/nguyenan/Documents/System/ApiGateway/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nguyenan/.nuget/NuGet/NuGet.Config"

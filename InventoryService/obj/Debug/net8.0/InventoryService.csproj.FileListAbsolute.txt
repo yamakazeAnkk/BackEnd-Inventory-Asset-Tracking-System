@@ -33,3 +33,39 @@
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/InventoryService/obj/Debug/net8.0/InventoryService.pdb
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/InventoryService/obj/Debug/net8.0/InventoryService.genruntimeconfig.cache
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/InventoryService/obj/Debug/net8.0/ref/InventoryService.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/appsettings.Development.json
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/appsettings.json
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/InventoryService
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/InventoryService.deps.json
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/InventoryService.runtimeconfig.json
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/InventoryService.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/InventoryService.pdb
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/SharedKernel.dll
+/Users/nguyenan/Documents/System/InventoryService/bin/Debug/net8.0/SharedKernel.pdb
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.csproj.AssemblyReference.cache
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.AssemblyInfoInputs.cache
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.AssemblyInfo.cs
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.csproj.CoreCompileInputs.cache
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.MvcApplicationPartsAssemblyInfo.cs
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.MvcApplicationPartsAssemblyInfo.cache
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.sourcelink.json
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets.build.json
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets.development.json
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets/msbuild.InventoryService.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets/msbuild.build.InventoryService.props
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.InventoryService.props
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.InventoryService.props
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/scopedcss/bundle/InventoryService.styles.css
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/Inventor.248F7646.Up2Date
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.dll
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/refint/InventoryService.dll
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.pdb
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/InventoryService.genruntimeconfig.cache
+/Users/nguyenan/Documents/System/InventoryService/obj/Debug/net8.0/ref/InventoryService.dll

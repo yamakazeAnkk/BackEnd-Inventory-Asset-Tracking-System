@@ -33,3 +33,39 @@
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/Debug/net8.0/ReportingService.pdb
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/Debug/net8.0/ReportingService.genruntimeconfig.cache
 /Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/Debug/net8.0/ref/ReportingService.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/appsettings.Development.json
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/appsettings.json
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/ReportingService
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/ReportingService.deps.json
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/ReportingService.runtimeconfig.json
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/ReportingService.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/ReportingService.pdb
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/SharedKernel.dll
+/Users/nguyenan/Documents/System/ReportingService/bin/Debug/net8.0/SharedKernel.pdb
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.csproj.AssemblyReference.cache
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.AssemblyInfoInputs.cache
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.AssemblyInfo.cs
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.csproj.CoreCompileInputs.cache
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.MvcApplicationPartsAssemblyInfo.cs
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.MvcApplicationPartsAssemblyInfo.cache
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.sourcelink.json
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets.build.json
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets.development.json
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets/msbuild.ReportingService.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets/msbuild.build.ReportingService.props
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ReportingService.props
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ReportingService.props
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/scopedcss/bundle/ReportingService.styles.css
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/Reportin.FB5AD4DB.Up2Date
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.dll
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/refint/ReportingService.dll
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.pdb
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ReportingService.genruntimeconfig.cache
+/Users/nguyenan/Documents/System/ReportingService/obj/Debug/net8.0/ref/ReportingService.dll

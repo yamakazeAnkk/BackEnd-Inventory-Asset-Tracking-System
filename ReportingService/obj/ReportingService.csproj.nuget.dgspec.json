@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/ReportingService.csproj": {}
+    "/Users/nguyenan/Documents/System/ReportingService/ReportingService.csproj": {}
   },
   "projects": {
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/ReportingService.csproj": {
+    "/Users/nguyenan/Documents/System/ReportingService/ReportingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/ReportingService.csproj",
+        "projectUniqueName": "/Users/nguyenan/Documents/System/ReportingService/ReportingService.csproj",
         "projectName": "ReportingService",
-        "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/ReportingService.csproj",
+        "projectPath": "/Users/nguyenan/Documents/System/ReportingService/ReportingService.csproj",
         "packagesPath": "/Users/nguyenan/.nuget/packages/",
-        "outputPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/ReportingService/obj/",
+        "outputPath": "/Users/nguyenan/Documents/System/ReportingService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nguyenan/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj": {
-                "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj"
+              "/Users/nguyenan/Documents/System/SharedKernel/SharedKernel.csproj": {
+                "projectPath": "/Users/nguyenan/Documents/System/SharedKernel/SharedKernel.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj": {
+    "/Users/nguyenan/Documents/System/SharedKernel/SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj",
+        "projectUniqueName": "/Users/nguyenan/Documents/System/SharedKernel/SharedKernel.csproj",
         "projectName": "SharedKernel",
-        "projectPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/SharedKernel.csproj",
+        "projectPath": "/Users/nguyenan/Documents/System/SharedKernel/SharedKernel.csproj",
         "packagesPath": "/Users/nguyenan/.nuget/packages/",
-        "outputPath": "/Users/nguyenan/Documents/Inventory & Asset Tracking System/SharedKernel/obj/",
+        "outputPath": "/Users/nguyenan/Documents/System/SharedKernel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nguyenan/.nuget/NuGet/NuGet.Config"
