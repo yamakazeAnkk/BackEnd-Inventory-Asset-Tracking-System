@@ -3,27 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetService", "AssetService\AssetService.csproj", "{B49D84BF-AA78-4384-8DA7-1CB34C063BE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetService", "AssetService\AssetService.csproj", "{B49D84BF-AA78-4384-8DA7-1CB34C063BE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryService", "InventoryService\InventoryService.csproj", "{DCD7A420-1C10-44C8-8AAB-9D7614D892AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryService", "InventoryService\InventoryService.csproj", "{DCD7A420-1C10-44C8-8AAB-9D7614D892AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{51C9627D-3B49-4748-84E5-C9345D2FEB63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{51C9627D-3B49-4748-84E5-C9345D2FEB63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssignmentService", "AssignmentService\AssignmentService.csproj", "{0CBC3995-7CA4-4CF1-9C30-2D0D9F6BFF84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssignmentService", "AssignmentService\AssignmentService.csproj", "{0CBC3995-7CA4-4CF1-9C30-2D0D9F6BFF84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportingService", "ReportingService\ReportingService.csproj", "{7E6038B8-AF5B-4C3D-BA6B-5B76FFDAA39D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportingService", "ReportingService\ReportingService.csproj", "{7E6038B8-AF5B-4C3D-BA6B-5B76FFDAA39D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{60B34D4B-CBEE-4C11-B448-BE8C28D10C43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{60B34D4B-CBEE-4C11-B448-BE8C28D10C43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{83A860E6-27C4-4BE4-B12B-ED4E4ACCCF75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{83A860E6-27C4-4BE4-B12B-ED4E4ACCCF75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B49D84BF-AA78-4384-8DA7-1CB34C063BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -54,5 +51,11 @@ Global
 		{83A860E6-27C4-4BE4-B12B-ED4E4ACCCF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A860E6-27C4-4BE4-B12B-ED4E4ACCCF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A860E6-27C4-4BE4-B12B-ED4E4ACCCF75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6EA0027-1D93-4017-8122-FFF7C09C6FD5}
 	EndGlobalSection
 EndGlobal
