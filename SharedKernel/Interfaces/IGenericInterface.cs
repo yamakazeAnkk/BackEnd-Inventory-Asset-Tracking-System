@@ -4,7 +4,7 @@ using SharedKernel.Responses;
 
 namespace SharedKernel.Interfaces
 {
-    internal interface IGenericInterface<T> where T : class
+    public interface IGenericInterface<T> where T : class
     {
         Task<Response> CreateAsync(T entity);
         Task<Response> UpdateAsync(T entity);
