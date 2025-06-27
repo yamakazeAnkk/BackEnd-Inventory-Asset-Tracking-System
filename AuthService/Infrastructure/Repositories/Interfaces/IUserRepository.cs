@@ -14,6 +14,8 @@ namespace AuthService.Infrastructure.Repositories.Interfaces
 
         Task<bool> UserExistsAsync(string email, string username);
 
+        Task<User> GetUserByIdAsync(string userId);
+
         Task AddUserAsync(User user);
     }
 }

@@ -6,10 +6,11 @@ using AuthService.Domain.Entities;
 using AuthService.Infrastructure.Data;
 using AuthService.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using AuthService.Application.Exceptions;
 
 namespace AuthService.Infrastructure.Repositories.Ef
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository 
     {
         private readonly AuthDbContext _context;
         
@@ -24,10 +25,6 @@ namespace AuthService.Infrastructure.Repositories.Ef
         {
             try
             {
-                if(await UserExistsAsync(user.Email, user.Username))
-                {
-                    throw new Exception("User already exists");
-                }
                 await _context.Users.AddAsync(user);
                 await _context.SaveChangesAsync();
                 _logger.LogInformation("User added successfully: {User}", user);
@@ -35,7 +32,7 @@ namespace AuthService.Infrastructure.Repositories.Ef
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error adding user: {User}", user);
-                throw new Exception("Error adding user");
+                throw new AuthException("Error adding user", ex);
             }
         }
 
@@ -44,16 +41,30 @@ namespace AuthService.Infrastructure.Repositories.Ef
             try
             {
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-                if(user == null)
-                {
-                    throw new Exception("User not found");
-                }
                 return user;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error getting user by email: {Email}", email);
-                throw new Exception("Error getting user by email");
+                throw new AuthException("Error getting user by email", ex);
+            }
+        }
+
+        public async Task<User> GetUserByIdAsync(string userId)
+        {
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == Guid.Parse(userId));
+                if(user == null)
+                {
+                    throw new UserNotFoundException(userId, "userId");
+                }
+                return user;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting user by id: {UserId}", userId);
+                throw new AuthException("Error getting user by id", ex);
             }
         }
 
@@ -62,23 +73,19 @@ namespace AuthService.Infrastructure.Repositories.Ef
             try 
             {
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
-                if(user == null)
-                {
-                    throw new Exception("User not found");
-                }
                 return user;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error getting user by username: {Username}", username);
-                throw new Exception("Error getting user by username");
+                throw new AuthException("Error getting user by username", ex);
             }
         }
         public async Task<bool> UserExistsAsync(string email, string username)
         {
             if(string.IsNullOrEmpty(email) && string.IsNullOrEmpty(username)){
-                        throw new ArgumentException("At least one identifier (email or username) must be provided");
-                }
+                throw new ValidationException("At least one identifier (email or username) must be provided");
+            }
             try
             {
                 var query = _context.Users.AsNoTracking().AsQueryable();
@@ -94,7 +101,7 @@ namespace AuthService.Infrastructure.Repositories.Ef
             {
                 _logger.LogError(ex, "Database error while checking user existence. Email: {Email}, Username: {Username}", 
                           email, username);
-                throw new Exception("Failed to verify user existence");
+                throw new AuthException("Failed to verify user existence", ex);
             }
         }
     }

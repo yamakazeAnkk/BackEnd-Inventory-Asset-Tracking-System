@@ -5,7 +5,8 @@ using AuthService.Infrastructure.Services;
 using AuthService.Configuration;
 using AuthService.Infrastructure.Repositories.Ef;
 using AuthService.Infrastructure.Repositories.Interfaces;
-
+using AuthService.Infrastructure.ExceptionHandling;
+using AuthService.Web.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,11 @@ builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService.Infrastructure.Services.AuthService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthRepository, AuthService.Infrastructure.Repositories.Ef.AuthRepository>();
+
+// Register API Exception Filters
+builder.Services.AddScoped<ApiExceptionFilter>();
+builder.Services.AddScoped<AdvancedApiExceptionFilter>();
 
 var app = builder.Build();
 
@@ -37,6 +43,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Add global exception handler
+app.UseGlobalExceptionHandler();
 
 app.UseCors(builder =>
 {

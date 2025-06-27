@@ -9,30 +9,43 @@ using AuthService.Infrastructure.Data;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using BCrypt.Net;
+using AuthService.Infrastructure.Repositories.Interfaces;
 using AuthService.Application.Dtos.User;
+using AuthService.Application.Exceptions;
 
 namespace AuthService.Infrastructure.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly AuthDbContext _context;
+        private readonly IUserRepository _userRepository;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
 
-        public AuthService(AuthDbContext context, ITokenService tokenService, IMapper mapper)
+        public AuthService(IUserRepository userRepository, ITokenService tokenService, IMapper mapper)
         {
-            _context = context;
+            _userRepository = userRepository;
             _tokenService = tokenService;
             _mapper = mapper;
         }
-        public Task<LoginResponse> GetUserByEmailAsync(string email)
+
+        public async Task<LoginResponse> GetUserByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByEmailAsync(email);
+            if (user == null)
+            {
+                throw new UserNotFoundException(email, "email");
+            }
+            return _mapper.Map<LoginResponse>(user);
         }
 
-        public Task<LoginResponse> GetUserByIdAsync(string userId)
+        public async Task<LoginResponse> GetUserByIdAsync(string userId)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByIdAsync(userId);
+            if (user == null)
+            {
+                throw new UserNotFoundException(userId, "userId");
+            }
+            return _mapper.Map<LoginResponse>(user);
         }
 
         public Task<LoginResponse> GetUserByPhoneAsync(string phone)
@@ -40,21 +53,26 @@ namespace AuthService.Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<LoginResponse> GetUserByUsernameAsync(string username)
+        public async Task<LoginResponse> GetUserByUsernameAsync(string username)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByUsernameAsync(username);
+            if (user == null)
+            {
+                throw new UserNotFoundException(username, "username");
+            }
+            return _mapper.Map<LoginResponse>(user);
         }
 
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+            var user = await _userRepository.GetUserByEmailAsync(request.Email);
             if(user == null)
             {
-                throw new Exception("Email not found.");
+                throw new InvalidCredentialsException(request.Email);
             }
             if(!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             {
-                throw new Exception("Invalid password.");
+                throw new InvalidCredentialsException(request.Email);
             }
             var token = _tokenService.GenerateToken(user);
             var refreshToken = _tokenService.GenerateRefreshToken();
@@ -66,9 +84,14 @@ namespace AuthService.Infrastructure.Services
             };
         }
 
-        public Task<LoginResponse> LogoutAsync(string userId)
+        public async Task<LoginResponse> LogoutAsync(string userId)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByEmailAsync(userId);
+            if (user == null)
+            {
+                throw new UserNotFoundException(userId, "userId");
+            }
+            return _mapper.Map<LoginResponse>(user);
         }
 
         public Task<LoginResponse> RefreshTokenAsync(RefreshTokenRequest request)
@@ -78,17 +101,16 @@ namespace AuthService.Infrastructure.Services
 
         public async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
         {
-            if(await _context.Users.AnyAsync(u => u.Email == request.Email)){
-                throw new Exception("Email already exists.");
+            if(await _userRepository.UserExistsAsync(request.Email, request.Username)){
+                throw new UserAlreadyExistsException(request.Email, request.Username);
             }
-            if(!string.IsNullOrEmpty(request.Username) && await _context.Users.AnyAsync(u => u.Username == request.Username)){
-                throw new Exception("Username already exists.");
+            if(!string.IsNullOrEmpty(request.Username) && await _userRepository.GetUserByUsernameAsync(request.Username) != null){
+                throw new UserAlreadyExistsException(null, request.Username);    
             }
             var user = _mapper.Map<User>(request);
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
             user.IsActive = true;
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            await _userRepository.AddUserAsync(user);
             var token = _tokenService.GenerateToken(user);
             var refreshToken = _tokenService.GenerateRefreshToken();
             var userReadDto = _mapper.Map<UserReadDto>(user);
