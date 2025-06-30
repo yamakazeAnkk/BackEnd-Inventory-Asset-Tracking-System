@@ -31,6 +31,7 @@ builder.Services.AddScoped<IAuthService, AuthService.Infrastructure.Services.Aut
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthRepository, AuthService.Infrastructure.Repositories.Ef.AuthRepository>();
 
+
 // Register API Exception Filters
 builder.Services.AddScoped<ApiExceptionFilter>();
 builder.Services.AddScoped<AdvancedApiExceptionFilter>();

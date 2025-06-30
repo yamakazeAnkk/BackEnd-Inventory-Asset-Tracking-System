@@ -15,6 +15,11 @@ namespace AuthService.Mappings
                 .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(src => src.Password))
                 .ReverseMap();
             CreateMap<RegisterRequest, User>().ReverseMap();
+            CreateMap<LoginResponse, UserReadDto>().ReverseMap();
+            CreateMap<RegisterResponse, UserReadDto>().ReverseMap();
+            CreateMap<ApiResponse<LoginResponse>, ApiResponse<UserReadDto>>().ReverseMap();
+            CreateMap<ApiResponse<RegisterResponse>, ApiResponse<UserReadDto>>().ReverseMap();
+            CreateMap<User,LoginResponse>().ReverseMap();
             
         }
     }

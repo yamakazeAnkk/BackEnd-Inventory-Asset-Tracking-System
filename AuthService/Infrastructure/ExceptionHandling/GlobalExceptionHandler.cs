@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
+using AuthService.Application.Dtos.Auth;
 using AuthService.Application.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -27,7 +28,15 @@ namespace AuthService.Infrastructure.ExceptionHandling
             }
             catch (Exception ex)
             {
-                await HandleExceptionAsync(context, ex);
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                var response = new ApiResponse<object>
+                {
+                    Status = false,
+                    Message = ex.Message,
+                    Data = null
+                };
+                await context.Response.WriteAsync(JsonSerializer.Serialize(response));
             }
         }
 

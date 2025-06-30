@@ -63,7 +63,7 @@ namespace AuthService.Infrastructure.Services
             return _mapper.Map<LoginResponse>(user);
         }
 
-        public async Task<LoginResponse> LoginAsync(LoginRequest request)
+        public async Task<ApiResponse<LoginResponse>> LoginAsync(LoginRequest request)
         {
             var user = await _userRepository.GetUserByEmailAsync(request.Email);
             if(user == null)
@@ -76,11 +76,19 @@ namespace AuthService.Infrastructure.Services
             }
             var token = _tokenService.GenerateToken(user);
             var refreshToken = _tokenService.GenerateRefreshToken();
-            return new LoginResponse
+            var userReadDto = _mapper.Map<UserReadDto>(user);
+            var loginResponse = new LoginResponse
             {
+                Data = userReadDto,
                 Token = token,
                 RefreshToken = refreshToken,
                 ExpiresAt = DateTime.UtcNow.AddMinutes(60)
+            };
+            return new ApiResponse<LoginResponse>
+            {
+                Data = loginResponse,
+                Status = true,
+                Message = "Login successful",
             };
         }
 
@@ -99,7 +107,7 @@ namespace AuthService.Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
+        public async Task<ApiResponse<RegisterResponse>> RegisterAsync(RegisterRequest request)
         {
             if(await _userRepository.UserExistsAsync(request.Email, request.Username)){
                 throw new UserAlreadyExistsException(request.Email, request.Username);
@@ -111,17 +119,21 @@ namespace AuthService.Infrastructure.Services
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
             user.IsActive = true;
             await _userRepository.AddUserAsync(user);
+            
+            var userReadDto = _mapper.Map<UserReadDto>(user);
             var token = _tokenService.GenerateToken(user);
             var refreshToken = _tokenService.GenerateRefreshToken();
-            var userReadDto = _mapper.Map<UserReadDto>(user);
-            return new RegisterResponse
+
+            var registerResponse = new RegisterResponse
             {
                 Data = userReadDto,
+                ExpiresAt = DateTime.UtcNow.AddMinutes(60)
+            };
+            return new ApiResponse<RegisterResponse>
+            {
+                Data = registerResponse,
                 Status = true,
                 Message = "User registered successfully",
-                Token = token,
-                RefreshToken = refreshToken,
-                ExpiresAt = DateTime.UtcNow.AddMinutes(60)
             };
         }
     }
