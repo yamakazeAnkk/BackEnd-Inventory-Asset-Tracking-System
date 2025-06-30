@@ -22,3 +22,4 @@
 /Users/nguyenan/Documents/System/SharedKernel/obj/Debug/net8.0/refint/SharedKernel.dll
 /Users/nguyenan/Documents/System/SharedKernel/obj/Debug/net8.0/SharedKernel.pdb
 /Users/nguyenan/Documents/System/SharedKernel/obj/Debug/net8.0/ref/SharedKernel.dll
+/Users/nguyenan/Documents/System/SharedKernel/obj/Debug/net8.0/SharedKernel.csproj.AssemblyReference.cache
