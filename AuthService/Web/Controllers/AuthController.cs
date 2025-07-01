@@ -3,6 +3,7 @@ using AuthService.Application.Dtos.Auth;
 using AuthService.Application.Interfaces;
 using System.Threading.Tasks;
 using AuthService.Web.Filters;
+using System.Security.Claims;
 
 namespace AuthService.Web.Controllers
 {
@@ -44,6 +45,17 @@ namespace AuthService.Web.Controllers
         {
             var response = await _authService.GetUserByUsernameAsync(username);
             return Ok(response);
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+            if (string.IsNullOrEmpty(email))
+                return Unauthorized(new { message = "User email not found in token." });
+
+            var response = await _authService.LogoutAsync(email);
+            return Ok(response); 
         }
     }
 }

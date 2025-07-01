@@ -13,7 +13,7 @@ namespace AuthService.Application.Interfaces
         Task<ApiResponse<LoginResponse>> LoginAsync(LoginRequest request);
         Task<LoginResponse> RefreshTokenAsync(RefreshTokenRequest request);
         Task<ApiResponse<RegisterResponse>> RegisterAsync(RegisterRequest request);
-        Task<LoginResponse> LogoutAsync(string userId);
+        Task<ApiResponse<string>> LogoutAsync(string userId);
         Task<LoginResponse> GetUserByIdAsync(string userId);
         Task<LoginResponse> GetUserByEmailAsync(string email);
         Task<LoginResponse> GetUserByUsernameAsync(string username);

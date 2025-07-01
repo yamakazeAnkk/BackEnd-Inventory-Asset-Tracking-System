@@ -92,14 +92,19 @@ namespace AuthService.Infrastructure.Services
             };
         }
 
-        public async Task<LoginResponse> LogoutAsync(string userId)
+        public async Task<ApiResponse<string>> LogoutAsync(string userId)
         {
             var user = await _userRepository.GetUserByEmailAsync(userId);
             if (user == null)
             {
                 throw new UserNotFoundException(userId, "userId");
             }
-            return _mapper.Map<LoginResponse>(user);
+            return new ApiResponse<string>
+            {
+                Data = userId,
+                Status = true,
+                Message = "Logout successful",
+            };
         }
 
         public Task<LoginResponse> RefreshTokenAsync(RefreshTokenRequest request)
