@@ -81,6 +81,22 @@ namespace AuthService.Infrastructure.Repositories.Ef
                 throw new AuthException("Error getting user by username", ex);
             }
         }
+
+        public async Task<IList<string>> GetUserRolesAsync(string userId)
+        {
+            var user = await GetUserByIdAsync(userId);
+            try
+            {
+                var roles = await _context.UserRoles.Where(ur => ur.UserId == user.Id).Select(ur => ur.Role.Name).ToListAsync();
+                return roles;
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex, "Error getting user roles: {UserId}", userId);
+                throw new AuthException("Error getting user roles", ex);
+            }
+        }
+
         public async Task<bool> UserExistsAsync(string email, string username)
         {
             if(string.IsNullOrEmpty(email) && string.IsNullOrEmpty(username)){

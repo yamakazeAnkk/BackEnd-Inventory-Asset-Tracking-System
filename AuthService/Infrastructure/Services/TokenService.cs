@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Security.Cryptography;
 using AuthService.Application.Exceptions;
+using AuthService.Infrastructure.Repositories.Interfaces;
 
 namespace AuthService.Infrastructure.Services
 {
@@ -20,14 +21,16 @@ namespace AuthService.Infrastructure.Services
     {
         private readonly JwtOptions _jwtOptions;
         private readonly ILogger<TokenService> _logger;
+        private readonly IUserRepository _userRepository;
 
-        public TokenService(IOptions<JwtOptions> jwtOptions, ILogger<TokenService> logger)
+        public TokenService(IOptions<JwtOptions> jwtOptions, ILogger<TokenService> logger, IUserRepository userRepository)
         {
             _jwtOptions = jwtOptions.Value;
             _logger = logger;
+            _userRepository = userRepository;
         }
 
-        public string GenerateRefreshToken()
+        public async Task<string> GenerateRefreshTokenAsync()
         {
             var randomBytes = new byte[64];
             using var rng = RandomNumberGenerator.Create();
@@ -35,21 +38,25 @@ namespace AuthService.Infrastructure.Services
             return Convert.ToBase64String(randomBytes);
         }
 
-        public string GenerateToken(User user)
+        public async Task<string> GenerateAccessTokenAsync(User user, IList<string> roles)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(_jwtOptions.SecretKey);
-            var claims = new List<Claim>
+            var userClaims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.UniqueName, user.Username),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty),
-                new Claim("fullName", user.FullName ?? string.Empty),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim("fullName", user.FullName),
                 new Claim("isActive", user.IsActive.ToString())
             };
+            foreach(var role in roles){
+                userClaims.Add(new Claim(ClaimTypes.Role, role));
+            }
+            
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(claims),
+                Subject = new ClaimsIdentity(userClaims),
                 Expires = DateTime.UtcNow.AddMinutes(_jwtOptions.AccessTokenExpirationMinutes),
                 Issuer = _jwtOptions.Issuer,
                 Audience = _jwtOptions.Audience,
@@ -88,5 +95,65 @@ namespace AuthService.Infrastructure.Services
                 throw new InvalidTokenException("Token validation failed", ex);
             }
         }
+
+        public Task<bool> ValidateTokenAsync(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_jwtOptions.SecretKey);
+            tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+            }, out SecurityToken validatedToken);
+            return Task.FromResult(true);
+        }
+
+        public Task RevokeTokenAsync(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_jwtOptions.SecretKey);
+            tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+            }, out SecurityToken validatedToken);
+            return Task.FromResult(true);
+        }
+
+        // Missing function blacklist token
+        public Task RevokeAllTokensAsync(string userId)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_jwtOptions.SecretKey);
+            tokenHandler.ValidateToken(userId, new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+            }, out SecurityToken validatedToken);
+            return Task.FromResult(true);
+        }
+
+        public async Task<string> RefreshAccessTokenAsync(string refreshToken)
+        {
+            try
+            {
+                var principal = GetPrincipalFromExpiredToken(refreshToken);
+                var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if(userId == null){
+                    return string.Empty;
+                }
+                var user = await _userRepository.GetUserByIdAsync(userId);
+                var roles = await _userRepository.GetUserRolesAsync(user.Id.ToString());
+                var newAccessToken = await GenerateAccessTokenAsync(user, roles);
+                return newAccessToken;
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex, "Error refreshing access token: {RefreshToken}", refreshToken);
+                throw new InvalidTokenException("Error refreshing access token", ex);
+            }
+        }
+
+        
     }
 }

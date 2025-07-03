@@ -13,5 +13,6 @@ namespace AuthService.Infrastructure.Repositories.Interfaces
         Task AddLoginHistoryAsync(UserLoginHistory loginHistory);
         Task<bool> ValidateUserCredentialsAsync(string email, string passwordHash);
         Task UpdateUserAsync(User user);
+
     }
 } 

@@ -16,6 +16,8 @@ namespace AuthService.Infrastructure.Repositories.Interfaces
 
         Task<User> GetUserByIdAsync(string userId);
 
+        Task<IList<string>> GetUserRolesAsync(string userId);
+
         Task AddUserAsync(User user);
     }
 }

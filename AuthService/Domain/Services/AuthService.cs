@@ -74,10 +74,11 @@ namespace AuthService.Infrastructure.Services
             {
                 throw new InvalidCredentialsException(request.Email);
             }
-            var token = _tokenService.GenerateToken(user);
-            var refreshToken = _tokenService.GenerateRefreshToken();
+            var roles = await _userRepository.GetUserRolesAsync(user.Id.ToString());
+            var token = await _tokenService.GenerateAccessTokenAsync(user, roles);
+            var refreshToken = await _tokenService.GenerateRefreshTokenAsync();
             var userReadDto = _mapper.Map<UserReadDto>(user);
-            var loginResponse = new LoginResponse
+            var loginResponse = new LoginResponse   
             {
                 Data = userReadDto,
                 Token = token,
@@ -126,8 +127,9 @@ namespace AuthService.Infrastructure.Services
             await _userRepository.AddUserAsync(user);
             
             var userReadDto = _mapper.Map<UserReadDto>(user);
-            var token = _tokenService.GenerateToken(user);
-            var refreshToken = _tokenService.GenerateRefreshToken();
+            var roles = await _userRepository.GetUserRolesAsync(user.Id.ToString());
+            var token = await _tokenService.GenerateAccessTokenAsync(user, roles);
+            var refreshToken = await _tokenService.GenerateRefreshTokenAsync();
 
             var registerResponse = new RegisterResponse
             {

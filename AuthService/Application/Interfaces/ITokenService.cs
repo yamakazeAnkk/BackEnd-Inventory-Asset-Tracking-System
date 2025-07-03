@@ -9,8 +9,16 @@ namespace AuthService.Application.Interfaces
 {
     public interface ITokenService
     {
-        string GenerateToken(User user);
-        string GenerateRefreshToken();
+        Task<string> GenerateAccessTokenAsync(User user, IList<string> roles);
+        Task<string> GenerateRefreshTokenAsync();
+        Task<bool> ValidateTokenAsync(string token);
+
+        Task RevokeTokenAsync(string token);
+
+        Task RevokeAllTokensAsync(string userId);
+
+        Task<string> RefreshAccessTokenAsync(string refreshToken);
+
         ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
     }
 }
