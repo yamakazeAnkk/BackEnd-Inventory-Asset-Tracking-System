@@ -3849,11 +3849,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj",
+      "projectUniqueName": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\BackEnd-Inventory-Asset-Tracking-System\\AssetService\\AssetService.csproj",
       "projectName": "AssetService",
-      "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj",
+      "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\BackEnd-Inventory-Asset-Tracking-System\\AssetService\\AssetService.csproj",
       "packagesPath": "C:\\Users\\Kim Huy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\obj\\",
+      "outputPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\BackEnd-Inventory-Asset-Tracking-System\\AssetService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kim Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3871,8 +3871,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj": {
-              "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\SharedKernel\\SharedKernel.csproj"
+            "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\BackEnd-Inventory-Asset-Tracking-System\\SharedKernel\\SharedKernel.csproj": {
+              "projectPath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\BackEnd-Inventory-Asset-Tracking-System\\SharedKernel\\SharedKernel.csproj"
             }
           }
         }

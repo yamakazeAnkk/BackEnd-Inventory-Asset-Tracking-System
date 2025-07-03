@@ -1,6 +1,7 @@
-﻿using AssetService.Infrastructure.Entity;
+﻿using AssetService.Application.DTOs;
+using AssetService.Domain.Entity;
 
-namespace AssetService.Infrastructure.DTO.Mapping
+namespace AssetService.Application.DTOs.Mapping
 {
     public static class AssetMapping
     {
@@ -16,7 +17,7 @@ namespace AssetService.Infrastructure.DTO.Mapping
         public static (AssetDTO?, IEnumerable<AssetDTO>?) FromEntity(Asset asset, IEnumerable<Asset>? assets)
         {
             // return single
-            if(asset is not null || assets is null)
+            if (asset is not null || assets is null)
             {
                 var singleAsset = new AssetDTO(
                     Id: asset!.Id,
@@ -29,7 +30,7 @@ namespace AssetService.Infrastructure.DTO.Mapping
             }
 
             // return multiple
-            if(assets is not null || asset is null)
+            if (assets is not null || asset is null)
             {
                 var _assets = assets!.Select(a => new AssetDTO(
                     Id: a.Id,
@@ -41,7 +42,7 @@ namespace AssetService.Infrastructure.DTO.Mapping
                 return (null, _assets);
             }
 
-            return (null, null);    
+            return (null, null);
         }
 
     }

@@ -1,14 +1,14 @@
-﻿using AssetService.Infrastructure.Entity;
+﻿using AssetService.Domain.Entity;
 using System.ComponentModel.DataAnnotations;
 
-namespace AssetService.Infrastructure.DTO
+namespace AssetService.Application.DTOs
 {
-    public record AssetDTO (
+    public record AssetDTO(
         Guid Id,
         [Required] string AssetCode,
         [Required] string AssetName,
         AssetStatus Status,
-        bool IsFaulty 
+        bool IsFaulty
         );
 
 }

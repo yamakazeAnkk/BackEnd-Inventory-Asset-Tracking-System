@@ -37,7 +37,7 @@ namespace SharedKernel.DependencyInjection
             app.UseMiddleware<GlobalException>();
 
             // Use Middleware for listen only API Gateway
-            app.UseMiddleware<ListenOnlyApiGateway>();
+            //app.UseMiddleware<ListenOnlyApiGateway>();
             return app;
         }
     }

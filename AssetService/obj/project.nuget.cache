@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CEJhbaWcszA=",
+  "dgSpecHash": "0476PNc7SW0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\InventoryAndAssetTrackingSystem\\AssetService\\AssetService.csproj",
+  "projectFilePath": "C:\\Users\\Kim Huy\\Desktop\\PersonalProject\\BackEnd-Inventory-Asset-Tracking-System\\AssetService\\AssetService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kim Huy\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Kim Huy\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
