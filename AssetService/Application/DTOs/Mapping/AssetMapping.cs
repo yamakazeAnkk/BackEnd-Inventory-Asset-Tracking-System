@@ -1,5 +1,5 @@
 ﻿using AssetService.Application.DTOs;
-using AssetService.Domain.Entity;
+using AssetService.Domain.Entities;
 
 namespace AssetService.Application.DTOs.Mapping
 {

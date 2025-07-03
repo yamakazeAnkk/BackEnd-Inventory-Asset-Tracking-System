@@ -13,7 +13,7 @@ namespace AssetService.Domain.Entities
         public string CategoryName { get; set; }
 
         public List<Asset> Assets { get; set; } = new List<Asset>(); // Navigation property to the list of assets associated with this brand
-        public DateTime Created_at { get; set; } = DateTime.UtcNow;// Timestamp for when the asset was created
+        public DateTime Created_at { get; set; } = DateTime.UtcNow; // Timestamp for when the asset was created
         public DateTime Updated_at { get; set; } // Timestamp for when the asset was last updated
     }
 }

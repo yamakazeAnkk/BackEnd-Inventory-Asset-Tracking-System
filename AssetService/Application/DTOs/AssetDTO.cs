@@ -1,4 +1,4 @@
-﻿using AssetService.Domain.Entity;
+﻿using AssetService.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace AssetService.Application.DTOs

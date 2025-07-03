@@ -27,7 +27,7 @@ namespace AssetService.Infrastructure.Repositories
                 {
                     logger.LogWarning($"Brand with name {entity.BrandName} already exists.");
                     return new Response(false, $"Brand with name {entity.BrandName} already exists.");
-                } 
+                }
                 var currentEntity = dbContext.Brands.Add(entity).Entity;
                 await dbContext.SaveChangesAsync();
                 if (currentEntity is not null && currentEntity.Id.ToString() != "")
@@ -135,3 +135,4 @@ namespace AssetService.Infrastructure.Repositories
             }
         }
     }
+}

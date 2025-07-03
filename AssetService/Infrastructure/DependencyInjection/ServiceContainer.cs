@@ -1,6 +1,6 @@
-﻿using AssetService.Domain.Repositories;
-using AssetService.Infrastructure.Data;
-using AssetService.Interface;
+﻿using AssetService.Infrastructure.Data;
+using AssetService.Domain.Interfaces;
+using AssetService.Infrastructure.Repositories;
 using SharedKernel.DependencyInjection;
 
 namespace AssetService.Infrastructure.DependencyInjection

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AssetService.Controllers
+namespace AssetService.Presentation.Controllers
 {
     [ApiController]
     [Route("api/assets")]
