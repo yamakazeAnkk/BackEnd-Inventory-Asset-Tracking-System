@@ -13,6 +13,10 @@ namespace AuthService.Infrastructure.Repositories.Interfaces
         Task AddLoginHistoryAsync(UserLoginHistory loginHistory);
         Task<bool> ValidateUserCredentialsAsync(string email, string passwordHash);
         Task UpdateUserAsync(User user);
-
+        Task SaveRefreshTokenAsync(RefreshToken refreshToken);
+        Task<RefreshToken?> GetRefreshTokenAsync(string token);
+        Task UpdateRefreshTokenAsync(RefreshToken refreshToken);
+        Task RevokeAllUserRefreshTokensAsync(Guid userId);
+        Task<RefreshToken?> GetLatestRefreshTokenForUserAsync(Guid userId);
     }
 } 

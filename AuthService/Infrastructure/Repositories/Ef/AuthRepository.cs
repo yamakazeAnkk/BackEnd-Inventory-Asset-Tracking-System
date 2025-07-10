@@ -5,6 +5,7 @@ using AuthService.Infrastructure.Data;
 using AuthService.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace AuthService.Infrastructure.Repositories.Ef
 {
@@ -118,6 +119,89 @@ namespace AuthService.Infrastructure.Repositories.Ef
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error updating user: {UserId}", user.Id);
+                throw;
+            }
+        }
+
+        public async Task SaveRefreshTokenAsync(RefreshToken refreshToken)
+        {
+            try
+            {
+                _context.RefreshTokens.Add(refreshToken);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Refresh token saved for user: {UserId}", refreshToken.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error saving refresh token for user: {UserId}", refreshToken.UserId);
+                throw;
+            }
+        }
+
+        public async Task<RefreshToken?> GetRefreshTokenAsync(string token)
+        {
+            try
+            {
+                return await _context.RefreshTokens
+                    .FirstOrDefaultAsync(rt => rt.Token == token);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting refresh token: {Token}", token);
+                throw;
+            }
+        }
+
+        public async Task UpdateRefreshTokenAsync(RefreshToken refreshToken)
+        {
+            try
+            {
+                _context.RefreshTokens.Update(refreshToken);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Refresh token updated: {Token}", refreshToken.Token);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating refresh token: {Token}", refreshToken.Token);
+                throw;
+            }
+        }
+
+        public async Task RevokeAllUserRefreshTokensAsync(Guid userId)
+        {
+            try
+            {
+                var refreshTokens = await _context.RefreshTokens
+                    .Where(rt => rt.UserId == userId && rt.RevokedAt == null)
+                    .ToListAsync();
+
+                foreach (var token in refreshTokens)
+                {
+                    token.RevokedAt = DateTime.UtcNow;
+                }
+
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("All refresh tokens revoked for user: {UserId}", userId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error revoking all refresh tokens for user: {UserId}", userId);
+                throw;
+            }
+        }
+
+        public async Task<RefreshToken?> GetLatestRefreshTokenForUserAsync(Guid userId)
+        {
+            try
+            {
+                return await _context.RefreshTokens
+                    .Where(rt => rt.UserId == userId && rt.RevokedAt == null && rt.ExpiresAt > DateTime.UtcNow)
+                    .OrderByDescending(rt => rt.CreatedAt)
+                    .FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting latest refresh token for user: {UserId}", userId);
                 throw;
             }
         }

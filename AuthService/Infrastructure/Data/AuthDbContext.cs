@@ -19,6 +19,7 @@ namespace AuthService.Infrastructure.Data
         public DbSet<Department> Departments { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<UserLoginHistory> UserLoginHistories { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -87,6 +88,16 @@ namespace AuthService.Infrastructure.Data
                 .HasOne(ulh => ulh.User)
                 .WithMany()
                 .HasForeignKey(ulh => ulh.UserId);
+
+            // RefreshToken PK
+            modelBuilder.Entity<RefreshToken>()
+                .HasKey(rt => rt.Id);
+
+            // RefreshToken relationship
+            modelBuilder.Entity<RefreshToken>()
+                .HasOne(rt => rt.User)
+                .WithMany()
+                .HasForeignKey(rt => rt.UserId);
         }
     }
 }           

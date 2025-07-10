@@ -18,12 +18,14 @@ namespace AuthService.Infrastructure.Services
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IAuthRepository _authRepository;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
 
-        public AuthService(IUserRepository userRepository, ITokenService tokenService, IMapper mapper)
+        public AuthService(IUserRepository userRepository, IAuthRepository authRepository, ITokenService tokenService, IMapper mapper)
         {
             _userRepository = userRepository;
+            _authRepository = authRepository;
             _tokenService = tokenService;
             _mapper = mapper;
         }
@@ -76,7 +78,8 @@ namespace AuthService.Infrastructure.Services
             }
             var roles = await _userRepository.GetUserRolesAsync(user.Id.ToString());
             var token = await _tokenService.GenerateAccessTokenAsync(user, roles);
-            var refreshToken = await _tokenService.GenerateRefreshTokenAsync();
+            var refreshToken = await _tokenService.GenerateRefreshTokenAsync(user);
+            
             var userReadDto = _mapper.Map<UserReadDto>(user);
             var loginResponse = new LoginResponse   
             {
@@ -129,7 +132,7 @@ namespace AuthService.Infrastructure.Services
             var userReadDto = _mapper.Map<UserReadDto>(user);
             var roles = await _userRepository.GetUserRolesAsync(user.Id.ToString());
             var token = await _tokenService.GenerateAccessTokenAsync(user, roles);
-            var refreshToken = await _tokenService.GenerateRefreshTokenAsync();
+            var refreshToken = await _tokenService.GenerateRefreshTokenAsync(user);
 
             var registerResponse = new RegisterResponse
             {

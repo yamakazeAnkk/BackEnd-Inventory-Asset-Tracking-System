@@ -14,6 +14,7 @@ using System.Text;
 using System.Security.Cryptography;
 using AuthService.Application.Exceptions;
 using AuthService.Infrastructure.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.Infrastructure.Services
 {
@@ -22,20 +23,50 @@ namespace AuthService.Infrastructure.Services
         private readonly JwtOptions _jwtOptions;
         private readonly ILogger<TokenService> _logger;
         private readonly IUserRepository _userRepository;
+        private readonly IAuthRepository _authRepository;
 
-        public TokenService(IOptions<JwtOptions> jwtOptions, ILogger<TokenService> logger, IUserRepository userRepository)
+        public TokenService(IOptions<JwtOptions> jwtOptions, ILogger<TokenService> logger, IUserRepository userRepository, IAuthRepository authRepository)
         {
             _jwtOptions = jwtOptions.Value;
             _logger = logger;
             _userRepository = userRepository;
+            _authRepository = authRepository;
         }
 
-        public async Task<string> GenerateRefreshTokenAsync()
+        public async Task<string> GenerateRefreshTokenAsync(User user)
         {
             var randomBytes = new byte[64];
             using var rng = RandomNumberGenerator.Create();
             rng.GetBytes(randomBytes);
-            return Convert.ToBase64String(randomBytes);
+            var refreshToken = Convert.ToBase64String(randomBytes);
+
+            var existingRefreshToken = await _authRepository.GetLatestRefreshTokenForUserAsync(user.Id);
+            if (existingRefreshToken != null)
+            {
+                if(existingRefreshToken.ExpiresAt < DateTime.UtcNow){
+                    existingRefreshToken.RevokedAt = DateTime.UtcNow;
+                    await _authRepository.UpdateRefreshTokenAsync(existingRefreshToken);
+                }
+                else{
+                    existingRefreshToken.Token = refreshToken;
+                    existingRefreshToken.ExpiresAt = DateTime.UtcNow.AddDays(7);
+                    existingRefreshToken.RevokedAt = null;
+                    existingRefreshToken.CreatedAt = DateTime.UtcNow;
+                    await _authRepository.UpdateRefreshTokenAsync(existingRefreshToken);    
+                }
+            }
+            else
+            {
+                var newRefreshToken = new RefreshToken
+                {
+                    UserId = user.Id,
+                    Token = refreshToken,
+                    ExpiresAt = DateTime.UtcNow.AddDays(7),
+                    CreatedAt = DateTime.UtcNow
+                };
+                await _authRepository.SaveRefreshTokenAsync(newRefreshToken);
+            }
+            return refreshToken;
         }
 
         public async Task<string> GenerateAccessTokenAsync(User user, IList<string> roles)
@@ -154,6 +185,70 @@ namespace AuthService.Infrastructure.Services
             }
         }
 
+        public async Task<bool> ValidateRefreshTokenAsync(string refreshToken)
+        {
+            try
+            {
+                // Get refresh token from database
+                var refreshTokenEntity = await _authRepository.GetRefreshTokenAsync(refreshToken);
+                if (refreshTokenEntity == null)
+                {
+                    return false;
+                }
+
+                // Check if token is expired
+                if (refreshTokenEntity.ExpiresAt < DateTime.UtcNow)
+                {
+                    return false;
+                }
+
+                // Check if token is revoked
+                if (refreshTokenEntity.RevokedAt.HasValue)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error validating refresh token");
+                return false;
+            }
+        }
+
+        public async Task RevokeRefreshTokenAsync(string refreshToken)
+        {
+            try
+            {
+                var refreshTokenEntity = await _authRepository.GetRefreshTokenAsync(refreshToken);
+                if (refreshTokenEntity != null)
+                {
+                    refreshTokenEntity.RevokedAt = DateTime.UtcNow;
+                    await _authRepository.UpdateRefreshTokenAsync(refreshTokenEntity);
+                    _logger.LogInformation("Refresh token revoked: {RefreshToken}", refreshToken);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error revoking refresh token: {RefreshToken}", refreshToken);
+                throw;
+            }
+        }
+
+        public async Task RevokeAllUserRefreshTokensAsync(Guid userId)
+        {
+            try
+            {
+                await _authRepository.RevokeAllUserRefreshTokensAsync(userId);
+                _logger.LogInformation("All refresh tokens revoked for user: {UserId}", userId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error revoking all refresh tokens for user: {UserId}", userId);
+                throw;
+            }
+        }
         
     }
 }
