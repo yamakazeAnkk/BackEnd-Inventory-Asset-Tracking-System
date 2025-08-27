@@ -36,23 +36,23 @@ public class UserKafkaConsumerService : BackgroundService
             // Try to deserialize as different message types
             if (TryDeserializeMessage<UserCreatedMessage>(message, out var userCreated))
             {
-                await HandleUserCreated(userCreated);
+                await HandleUserCreated(userCreated!);
             }
             else if (TryDeserializeMessage<UserUpdatedMessage>(message, out var userUpdated))
             {
-                await HandleUserUpdated(userUpdated);
+                await HandleUserUpdated(userUpdated!);
             }
             else if (TryDeserializeMessage<UserDeletedMessage>(message, out var userDeleted))
             {
-                await HandleUserDeleted(userDeleted);
+                await HandleUserDeleted(userDeleted!);
             }
             else if (TryDeserializeMessage<UserLoginMessage>(message, out var userLogin))
             {
-                await HandleUserLogin(userLogin);
+                await HandleUserLogin(userLogin!);
             }
             else if (TryDeserializeMessage<UserLogoutMessage>(message, out var userLogout))
             {
-                await HandleUserLogout(userLogout);
+                await HandleUserLogout(userLogout!);
             }
             else
             {
