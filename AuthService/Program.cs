@@ -7,6 +7,7 @@ using AuthService.Infrastructure.Repositories.Ef;
 using AuthService.Infrastructure.Repositories.Interfaces;
 using AuthService.Infrastructure.ExceptionHandling;
 using AuthService.Web.Filters;
+using SharedKernel.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,13 +25,20 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
+// Add Kafka services
+builder.Services.AddKafkaServices(builder.Configuration);
+
 // Register JwtOptions and TokenService
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService.Infrastructure.Services.AuthService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthRepository, AuthService.Infrastructure.Repositories.Ef.AuthRepository>();
+builder.Services.AddScoped<IAccessTokenService, AccessTokenService>();
+builder.Services.AddScoped<IRefreshTokenService, RefreshTokenService>();
 
+// Register User Event Publisher Service
+builder.Services.AddScoped<IUserEventPublisherService, UserEventPublisherService>();
 
 // Register API Exception Filters
 builder.Services.AddScoped<ApiExceptionFilter>();

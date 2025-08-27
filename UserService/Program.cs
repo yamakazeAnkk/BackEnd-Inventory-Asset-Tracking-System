@@ -1,3 +1,6 @@
+using SharedKernel.DependencyInjection;
+using UserService.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add Kafka services
+builder.Services.AddKafkaServices(builder.Configuration);
+
+// Add background service for consuming Kafka messages
+builder.Services.AddHostedService<UserKafkaConsumerService>();
 
 // Add CORS
 builder.Services.AddCors(options =>
